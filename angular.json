@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "portal-filmes"
+  "defaultProject": "portal-filmes",
+  "cli": {
+    "analytics": false
+  }
 }
