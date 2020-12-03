@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './views/home/home.component';
+import { PopularMoviesComponent } from './views/popular-movies/popular-movies.component';
+import {LatestMoviesComponent} from './views/latest-movies/latest-movies.component';
+import {NowPlayingMoviesComponent} from './views/now-playing-movies/now-playing-movies.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  {path: 'popular-movies', component: PopularMoviesComponent},
+  {path: 'latest-movies', component: LatestMoviesComponent},
+  {path: 'playing-movies', component: NowPlayingMoviesComponent}
 ];
 
 @NgModule({

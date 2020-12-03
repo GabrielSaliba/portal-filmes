@@ -1,15 +1,24 @@
 <div class="p-d-flex" flex>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="p-d-flex" color="primary">
         <mat-toolbar-row>
             <span>Portal de Filmes</span>
             <span class="example-spacer"></span>
-            <mat-icon >local_movies</mat-icon>
+            <mat-icon>local_movies</mat-icon>
             <span class="end-toolbar-spacer"></span>
-            <button mat-raised-button color="primary"><mat-icon>refresh</mat-icon> Recarregar</button>
-            <a mat-raised-button class="github-button" href="https://github.com/GabrielSaliba/portal-filmes" target="_blank"><i class="pi pi-github"></i> Github</a>
+            <button color="primary" mat-raised-button (click)="refresh()">
+                <mat-icon>refresh</mat-icon>
+                Recarregar
+            </button>
+            <a class="github-button" href="https://github.com/GabrielSaliba/portal-filmes" mat-raised-button
+               target="_blank"><i class="pi pi-github"></i> Github</a>
         </mat-toolbar-row>
     </mat-toolbar>
 </div>
 
+<nav mat-tab-nav-bar mat-align-tabs="center">
+    <a mat-tab-link (click)="navigateToPopular()" [active]="activeLink == links[0]">Populares </a>
+    <a mat-tab-link (click)="navigateToLatest()" [active]="activeLink == links[1]">Lançamentos </a>
+    <a mat-tab-link (click)="navigateToNowPlaying()" [active]="activeLink == links[2]">No Cinema </a>
+</nav>
 
 <router-outlet></router-outlet>
