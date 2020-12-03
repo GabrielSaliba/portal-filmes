@@ -1,0 +1,12 @@
+.example-spacer {
+    margin-right: 10px;
+  }
+
+.end-toolbar-spacer{
+  flex: 1 1 auto;
+}
+
+.github-button {
+  margin-left: 10px;
+  background-color: rgb(206, 211, 214);
+}
