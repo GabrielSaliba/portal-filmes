@@ -21,7 +21,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         AppComponent,
         PopularMoviesComponent,
         LatestMoviesComponent,
-        NowPlayingMoviesComponent
+        NowPlayingMoviesComponent,
     ],
     imports: [
         BrowserModule,
