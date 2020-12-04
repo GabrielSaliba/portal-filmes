@@ -1,16 +1,31 @@
-<div class="p-d-flex" flex>
-    <mat-toolbar class="p-d-flex" color="primary">
+<div fxLayout="row" fxLayoutAlign="end center">
+    <mat-toolbar class="p-d-flex" color="primary" >
         <mat-toolbar-row>
             <span>Portal de Filmes</span>
             <span class="example-spacer"></span>
             <mat-icon>local_movies</mat-icon>
             <span class="end-toolbar-spacer"></span>
-            <button color="primary" mat-raised-button (click)="refresh()">
-                <mat-icon>refresh</mat-icon>
-                Recarregar
-            </button>
-            <a class="github-button" href="https://github.com/GabrielSaliba/portal-filmes" mat-raised-button
-               target="_blank"><i class="pi pi-github"></i> Github</a>
+            <div fxHide.lt-sm>
+                <button color="primary" mat-raised-button (click)="refresh()" >
+                    <mat-icon>refresh</mat-icon>
+                    Recarregar
+                </button>
+                <a class="github-button" href="https://github.com/GabrielSaliba/portal-filmes" mat-raised-button
+                   target="_blank"><i class="pi pi-github"></i> Github</a>
+            </div>
+            <div fxHide.gt-xs>
+                <button mat-icon-button aria-label="Example icon-button with a menu" [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                    <mat-menu #menu="matMenu">
+                        <button color="primary" mat-button (click)="refresh()" fxLayout="row" fxFlex.lt-sm="100" fxFill>
+                            <mat-icon>refresh</mat-icon>
+                            Recarregar
+                        </button>
+                        <a color="primary" href="https://github.com/GabrielSaliba/portal-filmes" mat-button fxFlex.lt-sm="100" fxFill
+                           target="_blank"><i class="pi pi-github"></i> Github</a>
+                    </mat-menu>
+                </button>
+            </div>
         </mat-toolbar-row>
     </mat-toolbar>
 </div>
