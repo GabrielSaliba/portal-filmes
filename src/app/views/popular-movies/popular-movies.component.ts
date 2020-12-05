@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PopularMovie} from '../../model/popular-movie';
 import {MovieService} from '../../service/movie-service.service';
-import {Pagination} from '../../model/pagination';
 
 @Component({
     selector: 'app-popular-movies',
@@ -10,7 +9,7 @@ import {Pagination} from '../../model/pagination';
 })
 export class PopularMoviesComponent implements OnInit {
 
-    popularMovie: Array<PopularMovie>;
+    popularMovies: PopularMovie[];
 
     constructor(private movieService: MovieService
     ) {
@@ -22,8 +21,7 @@ export class PopularMoviesComponent implements OnInit {
 
     getPopularMovies(): void {
         this.movieService.getPopularMovies().subscribe(data => {
-            this.popularMovie = data.results;
+            this.popularMovies = data.results;
         });
     }
-
 }
