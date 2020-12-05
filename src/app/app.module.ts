@@ -18,6 +18,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { PopularShowsComponent } from './views/popular-shows/popular-shows.component';
+import { LocalDateTimePipe } from './shared/local-date-time.pipe';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { PopularShowsComponent } from './views/popular-shows/popular-shows.compo
         LatestMoviesComponent,
         NowPlayingMoviesComponent,
         PopularShowsComponent,
+        LocalDateTimePipe,
     ],
     imports: [
         BrowserModule,
@@ -42,7 +44,9 @@ import { PopularShowsComponent } from './views/popular-shows/popular-shows.compo
         MatInputModule,
         FormsModule
     ],
-    providers: [],
+    providers: [
+        LocalDateTimePipe
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

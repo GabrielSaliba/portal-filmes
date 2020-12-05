@@ -9,7 +9,7 @@
                         <span fxFlex style="font-size: 1.3rem">{{movie.title}}</span>
                     </div>
                     <div>
-                        <span fxFlex="60" style="font-size: 0.9rem; padding-top: 20px">{{movie.release_date}}</span>
+                        <span fxFlex="60" style="font-size: 0.9rem; padding-top: 20px">{{movie.release_date | localDateTime}}</span>
                     </div>
                     <div>
                         <span style="font-size: 0.9rem">{{movie.vote_average.toFixed(1)}}</span>
@@ -22,7 +22,7 @@
 
                 <div class="column" style="padding-top: 3%; padding-right: 2%">
                     <p>
-                        {{movie.overview}}
+                        {{movie.overview.substring(0, 600)}}
                     </p>
                 </div>
             </mat-card-content>

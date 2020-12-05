@@ -9,7 +9,7 @@
                         <span fxFlex style="font-size: 1.3rem">{{show.name}}</span>
                     </div>
                     <div>
-                        <span fxFlex="60" style="font-size: 0.9rem; padding-top: 20px">{{show.first_air_date}}</span>
+                        <span fxFlex="60" style="font-size: 0.9rem; padding-top: 20px">{{show.first_air_date | localDateTime}}</span>
                     </div>
                     <div>
                         <span style="font-size: 0.9rem">{{show.vote_average.toFixed(1)}}</span>
@@ -23,7 +23,7 @@
 
                 <div class="column" style="padding-top: 3%; padding-right: 2%">
                     <p>
-                        {{show.overview}}
+                        {{show.overview.substring(0, 600)}}}
                     </p>
                 </div>
             </mat-card-content>
