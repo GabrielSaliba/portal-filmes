@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {PopularMovie} from '../../model/popular-movie';
+import {Movie} from '../../model/movie';
 import {MovieService} from '../../service/movie-service.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {MovieService} from '../../service/movie-service.service';
 })
 export class PopularMoviesComponent implements OnInit {
 
-    popularMovies: PopularMovie[];
+    popularMovies: Movie[];
 
     constructor(private movieService: MovieService
     ) {

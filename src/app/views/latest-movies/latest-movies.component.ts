@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Movie} from '../../model/movie';
+import {MovieService} from '../../service/movie-service.service';
 
 @Component({
   selector: 'app-latest-movies',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestMoviesComponent implements OnInit {
 
-  constructor() { }
+  latestMovies: Movie[];
+
+  constructor(private movieService: MovieService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.getLatestMovies();
+  }
+
+  getLatestMovies(): void {
+    this.movieService.getLatestMovies().subscribe(data => {
+      this.latestMovies = data.results;
+    });
   }
 
 }

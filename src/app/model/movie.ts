@@ -1,4 +1,4 @@
-export class PopularMovie {
+export class Movie {
     id: number;
     poster_path: string;
     title: string;

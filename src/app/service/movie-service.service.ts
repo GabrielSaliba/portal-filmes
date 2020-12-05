@@ -24,4 +24,12 @@ export class MovieService {
     public getPopularMovies(): Observable<Pagination> {
         return this.http.get<Pagination>(`${this.apiUrl}/popular`, {params: {api_key: this.apiKey, language: 'pt-BR'}});
     }
+
+    public getPlayingMovies(): Observable<Pagination> {
+        return this.http.get<Pagination>(`${this.apiUrl}/now_playing`, {params: {api_key: this.apiKey, language: 'pt-BR'}});
+    }
+
+    public getLatestMovies(): Observable<Pagination> {
+        return this.http.get<Pagination>(`${this.apiUrl}/upcoming`, {params: {api_key: this.apiKey, language: 'pt-BR'}});
+    }
 }
