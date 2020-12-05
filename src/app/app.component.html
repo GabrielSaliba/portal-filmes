@@ -44,7 +44,7 @@
 
 <div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%" *ngIf="searchString!=undefined || searchString!=''">
     <ng-container *ngFor="let movie of searchedMovies" style="margin: 0.5%;">
-        <mat-card *ngIf="!movie.overview || movie.adult" class="mat-card-movie"
+        <mat-card *ngIf="movie.overview" class="mat-card-movie"
                   fxFlex.lt-md="48"
                   fxFlex.lt-sm="100" fxFlex.lt-xl="32" fxFlex.xl="32" fxFlexAlign="stretch">
             <mat-card-header style="background-color: #90bfff">
