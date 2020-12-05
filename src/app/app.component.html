@@ -29,11 +29,49 @@
         </mat-toolbar-row>
     </mat-toolbar>
 </div>
-
+<mat-form-field  fxLayoutAlign="center center" style="margin-top: 10px">
+    <mat-label>Pesquisar Filme</mat-label>
+    <input matInput [(ngModel)]="searchString" (ngModelChange)="searchMovies()">
+</mat-form-field>
 <nav mat-tab-nav-bar mat-align-tabs="center">
     <a mat-tab-link (click)="navigateToPopular()" [active]="activeLink == links[0]">Populares </a>
     <a mat-tab-link (click)="navigateToLatest()" [active]="activeLink == links[1]">Lançamentos </a>
     <a mat-tab-link (click)="navigateToNowPlaying()" [active]="activeLink == links[2]">No Cinema </a>
+    <a mat-tab-link (click)="navigateToPopularShows()" [active]="activeLink == links[3]">Séries </a>
 </nav>
 
-<router-outlet></router-outlet>
+<router-outlet *ngIf="searchString==undefined || searchString==''"></router-outlet>
+
+<div fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%" *ngIf="searchString!=undefined || searchString!=''">
+    <ng-container *ngFor="let movie of searchedMovies" style="margin: 0.5%;">
+        <mat-card *ngIf="!movie.overview || movie.adult" class="mat-card-movie"
+                  fxFlex.lt-md="48"
+                  fxFlex.lt-sm="100" fxFlex.lt-xl="32" fxFlex.xl="32" fxFlexAlign="stretch">
+            <mat-card-header style="background-color: #90bfff">
+                <mat-card-title class="mat-card-title">
+                    <div class="row">
+                        <span fxFlex style="font-size: 1.3rem">{{movie.title}}</span>
+                    </div>
+                    <div>
+                        <span fxFlex="60" style="font-size: 0.9rem; padding-top: 20px">{{movie.release_date}}</span>
+                    </div>
+                    <div>
+                        <span style="font-size: 0.9rem">{{movie.vote_average.toFixed(1)}}</span>
+                        <i style="font-size: 0.8rem; margin-left: 5%" class="pi pi-star"></i>
+                    </div>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content style="padding: 0">
+                <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="{{movie.title}} poster" width="200px" height="300px" fxFlex="40" style="padding-right: 5%">
+
+                <div class="column" style="padding-top: 3%; padding-right: 2%">
+                    <p>
+                        {{movie.overview}}
+                    </p>
+                </div>
+            </mat-card-content>
+
+        </mat-card>
+    </ng-container>
+</div>
+

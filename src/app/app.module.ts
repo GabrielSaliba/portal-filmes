@@ -15,6 +15,9 @@ import {NowPlayingMoviesComponent} from './views/now-playing-movies/now-playing-
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import { PopularShowsComponent } from './views/popular-shows/popular-shows.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +25,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         PopularMoviesComponent,
         LatestMoviesComponent,
         NowPlayingMoviesComponent,
+        PopularShowsComponent,
     ],
     imports: [
         BrowserModule,
@@ -34,7 +38,9 @@ import {FlexLayoutModule} from '@angular/flex-layout';
         MatTabsModule,
         MatCardModule,
         MatMenuModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatInputModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
